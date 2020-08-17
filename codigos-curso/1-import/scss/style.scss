@@ -1,0 +1,17 @@
+@import "colors";
+@import "buttons";
+
+//Note que a ordem do import é levada em consideração ao gerar o arquivo css
+
+$cinza: #999;
+
+div {
+  background: $cinza;
+  height: 200px;
+  width: 100px;
+
+  a {
+    color: pink;
+    background: blue;
+  }
+}
