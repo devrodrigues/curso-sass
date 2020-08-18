@@ -1,0 +1,49 @@
+@mixin border-box {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+@mixin title {
+  color: $cor-primaria;
+  font-family: $fonte-primaria;
+  margin-bottom: $gutter;
+  font-family: $fonte-primaria;
+}
+
+@mixin title-large {
+  @include title();
+  font-size: 4em;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+@mixin separator($color: blue, $width: 300px) {
+  &::after {
+    content: "";
+    display: block;
+    width: $width;
+    height: 4px;
+    background: $color;
+  }
+}
+
+//Para que possamos receber vários valores de um mesmo parâmetro
+@mixin box-shadow($shadow...) {
+  box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  -webkit-box-shadow: $shadow;
+}
+
+//Uso de @content facilita o uso de media queries para responsividade
+@mixin tablet {
+  @media (min-width: 601px) and (max-width: 800px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
