@@ -1,0 +1,35 @@
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+a.error {
+  display: block;
+}
+
+.button-error {
+  @extend .error;
+  padding: 20px;
+  width: 200px;
+}
+
+//Abaixo temos 2 placeholders, em que somente são compilados quando são extendidos por outra classe
+%clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+//este aqui não é usado em nenhum lugar - note que não aparecerá no style.css
+%placeholder {
+  font-size: 40px;
+}
+
+div {
+  @extend %clearfix;
+}
+
+//aceita até a classe com o próprio nome do placeholder
+.clearfix {
+  @extend %clearfix;
+}

@@ -1,0 +1,21 @@
+.error, .button-error {
+  color: red;
+  font-weight: bold;
+}
+
+a.error, a.button-error {
+  display: block;
+}
+
+.button-error {
+  padding: 20px;
+  width: 200px;
+}
+
+.clearfix::after, div::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*# sourceMappingURL=style.css.map */
