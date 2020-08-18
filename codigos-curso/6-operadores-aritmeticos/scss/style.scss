@@ -1,0 +1,9 @@
+$gutter: 20px;
+
+p {
+  $width: 400px;
+  width: $width - 2 * $gutter;
+  padding: $gutter;
+  //útil para definirmos que a altura seja sempre a metade da largura
+  height: $width / 2;
+}
