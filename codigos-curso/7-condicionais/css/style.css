@@ -1,0 +1,40 @@
+div {
+  color: black;
+  background: gray;
+  width: 200px;
+  height: 200px;
+}
+
+p {
+  font-family: monospace;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.medium-shadow {
+  box-shadow: 15px 15px 15px 0 #333;
+}
+
+div {
+  font-size: 1.4em;
+  max-width: 100%;
+}
+@media (min-width: 301px) and (max-width: 600px) {
+  div {
+    font-size: 1.2em;
+    max-width: 80%;
+  }
+}
+@media (max-width: 300px) {
+  div {
+    font-size: 1em;
+    max-width: 60%;
+  }
+}
+
+.p-main {
+  width: 420px;
+  height: 630px;
+}
+
+/*# sourceMappingURL=style.css.map */
