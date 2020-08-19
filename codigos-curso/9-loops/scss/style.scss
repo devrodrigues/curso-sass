@@ -1,0 +1,55 @@
+//Loop para criar Grid
+
+$container: 960;
+$gutter: 20;
+$colunas: 12;
+
+//Grid com px
+
+@for $i from 1 through $colunas {
+  $width: $container / $colunas * $i - $gutter;
+  .grid-#{$i} {
+    width: $width + px;
+  }
+}
+
+//Grid com porcentagem e com 16 colunas
+
+@for $i from 1 through 16 {
+  //percentage() é built-in do Sass e que tira a porcentagem a partir de uma determinada razão
+  //$width: percentage(1 / $i);
+  $width: $i / 16 * 100%;
+  .col-#{$i} {
+    width: $width;
+  }
+}
+
+//Loop com while
+
+$w: 1;
+
+@while $w <= 6 {
+  .while-type-#{i} {
+    font-size: 16 * $w + px;
+  }
+  //$w++
+  $w: $w + 1;
+}
+
+//Uso de each -> equivale ao for...each
+//ou seja: para cada elemento da lista, aplique x código
+
+$redes: facebook twitter pinterest instagram;
+
+@each $rede in $redes {
+  .#{$rede}-icon {
+    background-image: url("../img/#{$rede}.png");
+  }
+}
+
+div {
+  margin: 0 auto;
+  background: cadetblue;
+  color: white;
+  font-weight: bold;
+}
