@@ -1,0 +1,56 @@
+@import "mixins";
+
+$tema: none;
+$primary-color: black;
+$secondary-color: gray;
+
+$p-main-width: 420px;
+
+@if $tema == oceano {
+  div {
+    @include oceano();
+  }
+} @else if $tema == deserto {
+  div {
+    @include deserto();
+  }
+} @else {
+  //valor default
+  div {
+    @include tema-padrao();
+  }
+}
+
+p {
+  @include type(x-large);
+}
+
+.medium-shadow {
+  @include shadow(medium-shadow);
+}
+
+//Fonte de acordo com a responsividade
+
+div {
+  font-size: 1.4em;
+  max-width: 100%;
+  @include device(tablet) {
+    font-size: 1.2em;
+    max-width: 80%;
+  }
+  @include device(smartphone) {
+    font-size: 1em;
+    max-width: 60%;
+  }
+}
+
+//Operadores < e >   ////////////////
+
+.p-main {
+  width: $p-main-width;
+  @if $p-main-width > 400px {
+    height: $p-main-width * 1.5;
+  } @else {
+    height: $p-main-width;
+  }
+}

@@ -1,0 +1,76 @@
+//Temas/////////////////////////
+
+@mixin tema-padrao {
+  color: $primary-color;
+  background: $secondary-color;
+  width: 200px;
+  height: 200px;
+}
+
+@mixin oceano {
+  $primary-color: blue;
+  $secondary-color: cadetblue;
+  color: $primary-color;
+  background: $secondary-color;
+  width: 200px;
+  height: 200px;
+}
+
+@mixin deserto {
+  $primary-color: yellow;
+  $secondary-color: red;
+  color: $primary-color;
+  background: $secondary-color;
+  width: 200px;
+  height: 200px;
+}
+
+//////////////////////////////
+
+//Tamanho da fonte////////////
+
+@mixin type($p-size) {
+  font-family: monospace;
+  @if $p-size == normal {
+    font-size: 1em;
+  } @else if $p-size == large {
+    font-size: 1.125em;
+  } @else if $p-size == x-large {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+}
+
+//////////////////////////////
+
+//Box-shadow//////////////////
+
+@mixin shadow($type) {
+  @if $type == low-shadow {
+    box-shadow: 5px 5px 5px 0 #333;
+  } @else if $type == medium-shadow {
+    box-shadow: 15px 15px 15px 0 #333;
+  } @else if $type == heavy-shadow {
+    box-shadow: 25px 25px 25px 0 #333;
+  }
+}
+
+//////////////////////////////
+
+//Mixin-responsividade////////
+
+@mixin device($device) {
+  @if $device == smartphone {
+    @media (max-width: 300px) {
+      @content;
+    }
+  } @else if $device == tablet {
+    @media (min-width: 301px) and (max-width: 600px) {
+      @content;
+    }
+  } @else if $device == desktop {
+    @media (min-width: 601px) and (max-width: 900px) {
+      @content;
+    }
+  }
+}
