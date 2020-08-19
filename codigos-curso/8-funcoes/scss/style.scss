@@ -1,0 +1,48 @@
+/*
+
+Funções abordadas:
+  darken(), lighten(), transparentize() - transforma cor para rgb e aplica transparência nela -,
+  round() - arredonda valor, 
+
+Veja a doc:
+https://sass-lang.com/documentation/modules
+
+*/
+
+@import "functions";
+
+$width: 485px;
+
+ul {
+  text-align: center;
+  li {
+    display: inline-block;
+    list-style: none;
+    a {
+      display: block;
+      padding: 20px;
+      text-decoration: none;
+      background: blue;
+      color: white;
+      font-size: convert-to-em(36);
+      &:hover,
+      &.active {
+        background: darken(blue, 20%);
+      }
+    }
+  }
+}
+
+p {
+  width: round($width / 3);
+  height: round($width / 3);
+  font-size: convert-to-em(24);
+}
+
+//Note que também poderíamos fazer com mixin e usando @include, mas com function fica
+//mais fácil de usar
+
+section {
+  margin: 0 auto;
+  width: grid(8);
+}

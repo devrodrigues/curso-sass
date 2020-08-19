@@ -1,0 +1,14 @@
+//Função que converte de pixel para 'em' - 16 geralmente é o padrão dos browsers
+
+//Note que contexto tem um argumento default, mas podemos mudá-lo como uma função mesmo
+//Para isso, basta passar um parâmetro lá no código definindo outro valor padrão para isso.
+
+@function convert-to-em($pixels, $contexto: 16) {
+  @return ($pixels / $contexto) * 1em;
+}
+
+//Função para cálculo de Grid - veja que segue um padrão parecido de cálculo da função anterior
+
+@function grid($colunas, $total: 12) {
+  @return round(($colunas / $total) * 100%);
+}
